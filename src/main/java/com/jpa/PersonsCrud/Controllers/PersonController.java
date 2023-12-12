@@ -27,7 +27,7 @@ public class PersonController {
     }
 
     @GetMapping("/persons/{id}")
-    public Optional<Person> getPersonById(Long id){
+    public Optional<Person> getPersonById(@PathVariable("id") Long id){
         return personService.getPersonById(id);
     }
 
