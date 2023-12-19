@@ -1,5 +1,6 @@
 package com.jpa.PersonsCrud.Entities;
 
+import com.jpa.PersonsCrud.Dtos.SavePersonDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,4 +17,7 @@ public class Person {
     private String name;
     private String phone;
     private String city;
+
+    @OneToOne(mappedBy = "person", cascade = CascadeType.PERSIST)
+    private User user;
 }
